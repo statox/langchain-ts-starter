@@ -20,3 +20,8 @@ This uses the same tsconfig and build setup as the [examples repo](https://githu
 - Write your code in `src`
 - `npx turbo run build lint format` to run build scripts quickly in parallel
 - `npm start` to run your program
+
+## My notes
+
+- For some reason `npm install` for the original repo and `npm install --save chromadb` only work with node 16. But you need to run `npm start` with node 18 otherwise axios dependency fails because `Headers` is a new feature.
+- To use chroma for embedings and vector store you need to install the server. It seems that the python version allows in memory db but with this client sdk you need the server running. Chroma can be installed via docker using [this repo](git@github.com:chroma-core/chroma.git). On my machine I had to change the ports config in `docker-compose.yml`
